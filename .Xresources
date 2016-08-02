@@ -1,0 +1,70 @@
+! Fonts
+#define FONT           xft:Consolas:pixelsize=14:antialias=true:autohinting=true
+#define FONT_BOLD      xft:Consolas:bold:pixelsize=14:antialias=true:autohinting=true
+#define FONT_ITALIC    xft:Consolas:italic:pixelsize=14:antialias=true:autohinting=true
+#define FONT_UNDERLINE xft:Consolas:underline:pixelsize=14:antialias=true:autohinting=true
+! Font rendering improvements
+Xft.antialias:  1
+Xft.dpi:    96
+Xft.hinting:    1
+Xft.hintstyle:  hintslight
+Xft.lcdfilter:  lcddefault
+Xft.rgba:   rgb
+!color scheme:
+URxvt*depth: 32
+URxvt*background: [90]#2B2B2B
+*foreground: #DEDEDE
+
+*colorUL: #86a2b0
+
+!! black
+*color0  : #2E3436
+*color8  : #555753
+!! red
+*color1  : #CC0000
+*color9  : #EF2929
+!! green
+*color2  : #4E9A06
+*color10 : #8AE234
+!! yellow
+*color3  : #C4A000
+*color11 : #FCE94F
+!! blue
+*color4  : #3465A4
+*color12 : #729FCF
+!! magenta
+*color5  : #75507B
+*color13 : #AD7FA8
+*color161 : #AD7FA8
+!! cyan
+*color6  : #06989A
+*color14 : #34E2E2
+!! white
+*color7  : #D3D7CF
+*color15 : #EEEEEC
+
+!urxvt fonts: 
+
+URxvt*font: FONT
+URxvt*boldFont: FONT_BOLD
+URxvt.letterSpace: -1
+
+!enabling clickable links:
+
+URxvt.urlLauncher:      /usr/bin/firefox
+URxvt.matcher.button:   1 
+
+!urxvt scrolling options and cursor style:
+
+URxvt*saveLines: 12000
+URxvt*scrollstyle: plain
+URxvt*scrollBar_right: true
+
+! urxvt tabs settings:
+URxvt.tabbed.tabbar-fg: 2
+URxvt.tabbed.tabbar-bg: 0
+URxvt.tabbed.tab-fg: 2
+URxvt.tabbed.tab-bg: 8
+URxvt.tabbed.autohide:  yes
+URxvt.tabbed.new-button:  no
+URxvt.tabbed.title: no
