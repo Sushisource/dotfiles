@@ -5,6 +5,7 @@
 !.gitignore
 !.bashrc
 !.Xresources
+!.xinitrc
 
 # This sillyness is to enable certain things in the config dir
 !.config/
