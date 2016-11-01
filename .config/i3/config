@@ -52,7 +52,7 @@ set $darkgreen          #7F8910
 
 #class                  border      backgr.     text        split
 client.focused          $green      $green      $black      $darkgreen
-client.focused_inactive $grey       $grey       $lightgrey  $grey
+client.focused_inactive $grey       $grey       $white      $grey
 client.unfocused        $grey       $grey       $lightgrey  $grey
 client.urgent           $red        $red        $black      $red
 client.background       $back
