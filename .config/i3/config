@@ -33,7 +33,7 @@ exec --no-startup-id i3-msg 'workspace number 2; exec /usr/bin/firefox'
 # LOOK ========================================================================
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font pango:Terminus 8
+font pango:Terminus 12
 # This is actually two pixels? Not sure what's up there.
 new_window pixel 2
 new_float pixel 2
@@ -205,7 +205,7 @@ bindsym $mod+r mode "resize"
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
-    font pango:Terminus, Awesome 8
+    font pango:Terminus, Awesome 12
     status_command py3status
     tray_output primary
     colors {

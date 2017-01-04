@@ -1,8 +1,8 @@
 ! Fonts
-#define FONT           xft:Consolas:pixelsize=14:antialias=true:autohinting=true
-#define FONT_BOLD      xft:Consolas:bold:pixelsize=14:antialias=true:autohinting=true
-#define FONT_ITALIC    xft:Consolas:italic:pixelsize=14:antialias=true:autohinting=true
-#define FONT_UNDERLINE xft:Consolas:underline:pixelsize=14:antialias=true:autohinting=true
+#define FONT           xft:Consolas:pixelsize=14:antialias=true:autohinting=true,xft:DejaVu Sans Mono:pixelsize=14:antialias=true:autohinting=true
+#define FONT_BOLD      xft:Consolas:bold:pixelsize=14:antialias=true:autohinting=true,xft:DejaVu Sans Mono:pixelsize=14:antialias=true:autohinting=true
+#define FONT_ITALIC    xft:Consolas:italic:pixelsize=14:antialias=true:autohinting=true,xft:DejaVu Sans Mono:pixelsize=14:antialias=true:autohinting=true
+#define FONT_UNDERLINE xft:Consolas:underline:pixelsize=14:antialias=true:autohinting=true,xft:DejaVu Sans Mono:pixelsize=14:antialias=true:autohinting=true
 ! Color defs
 
 ! Font rendering improvements
