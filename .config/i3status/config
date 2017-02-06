@@ -1,0 +1,41 @@
+# i3status configuration file.
+# see "man i3status" for documentation.
+
+# It is important that this file is edited as UTF-8.
+# The following line should contain a sharp s:
+# ß
+# If the above line is not correctly displayed, fix your editor first!
+
+general {
+    colors = true
+    color_good = "#B5BD56"
+    interval = 5
+}
+
+order += "window_title"
+order += "ethernet enp0s25"
+order += "net_rate"
+order += "sysdata"
+order += "tztime local"
+
+window_title {
+    color = "#555555"
+}
+
+ethernet enp0s25 {
+# if you use %speed, i3status requires root privileges
+    format_up = "%ip"
+    format_down = "ethernet down!"
+}
+
+sysdata {
+    format = " {cpu_usage}%   {mem_used}GB ({mem_used_percent}%)"
+}
+
+net_rate {
+    format = "{down}  {up} "
+}
+
+tztime local {
+    format = "%Y-%m-%d %I:%M:%S %p"
+}

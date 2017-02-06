@@ -1,6 +1,9 @@
 # Path to Oh My Fish install.
 set -gx OMF_PATH "/home/sjudge/.local/share/omf"
 
+# PATH extensions
+set -gx PATH "/home/sjudge/.cargo/bin" "/home/sjudge/.local/bin" $PATH
+
 # Customize Oh My Fish configuration path.
 #set -gx OMF_CONFIG "/home/sjudge/.config/omf"
 

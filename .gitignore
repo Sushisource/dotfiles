@@ -12,6 +12,8 @@
 .config/*
 # i3
 !.config/i3/
+!.config/i3status/
+!.config/i3status/config
 # fish
 !.config/fish/
 .config/fish/*
@@ -20,3 +22,6 @@
 !.config/ranger/
 .config/ranger/*
 !.config/ranger/rc.conf
+# Cool lockscreen
+!.config/screenlocker
+!.config/lock_icon.png
