@@ -173,6 +173,10 @@ bindsym $mod+minus move scratchpad
 # Show the first scratchpad window
 bindsym $mod+plus scratchpad show
 
+# Pausing spotify
+bindsym $mod+KP_Subtract exec dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Pause
+bindsym $mod+KP_Add exec dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Play
+
 # reload the configuration file
 bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
