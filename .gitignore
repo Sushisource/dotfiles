@@ -26,3 +26,7 @@
 # Cool lockscreen
 !.config/screenlocker
 !.config/lock_icon.png
+# Polybar
+!.config/polybar
+# wal help
+!.config/rando_wall.sh

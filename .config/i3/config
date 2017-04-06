@@ -55,11 +55,31 @@ set $darkred            #A54242
 set $green              #B5BD56
 set $darkgreen          #7F8910
 
-#class                  border      backgr.     text        split
-client.focused          $green      $green      $black      $darkgreen
-client.focused_inactive $grey       $grey       $white      $grey
-client.unfocused        $grey       $grey       $lightgrey  $grey
-client.urgent           $red        $red        $black      $red
+# #class                  border      backgr.     text        split
+# client.focused          $green      $green      $black      $darkgreen
+# client.focused_inactive $grey       $grey       $white      $grey
+# client.unfocused        $grey       $grey       $lightgrey  $grey
+# client.urgent           $red        $red        $black      $red
+# client.background       $back
+
+# Color settings for wal
+# Set colors from Xresources
+# Change 'color7' and 'color2' to whatever colors you want i3 to use
+# from the generated scheme.
+# NOTE: The '#f0f0f0' in the lines below is the color i3 will use if
+# it fails to get colors from Xresources for some reason.
+set_from_resource $fg   i3wm.color0 #f0f0f0
+set_from_resource $bg_i i3wm.color8 #f0f0f0
+set_from_resource $fg_i i3wm.color15 #f0f0f0
+set_from_resource $bg   i3wm.color2 #f0f0f0
+set_from_resource $br   i3wm.color1 #f0f0f0
+
+# class                 border    backgr. text   split
+client.focused          $bg       $bg     $fg    $yellow
+client.focused_inactive $bg_i     $bg_i   $fg_i  $yellow
+client.unfocused        $bg_i     $bg_i   $fg_i  $yellow
+client.urgent           $bg       $bg     $fg    $yellow
+client.placeholder      $bg       $bg     $fg    $yellow
 client.background       $back
 
 # make sure xfce notifications display properly
@@ -211,19 +231,5 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-# Start i3bar to display a workspace bar (plus the system information i3status
-# finds out, if available)
-bar {
-    font pango:Terminus, Awesome 8
-    status_command py3status
-    tray_output primary
-    colors {
-        background #000000
-        # class            border   backgrd  text
-        focused_workspace  #545454  $green   #222222
-        active_workspace   $green   #262626  #a5a5a5
-        inactive_workspace #545454  #000000  #a5a5a5
-        urgent_workspace   #161616  #545454  #a5a5a5
-    }
-}
-
+# Polybar ACTIVATEEEEEE
+exec_always --no-startup-id $HOME/.config/polybar/launch.sh

@@ -15,3 +15,5 @@ set -x TERMINAL urxvt256c
 
 # Set default user so my theme doesn't always show user name
 set default_user sjudge
+
+alias egrep "egrep --color=auto"

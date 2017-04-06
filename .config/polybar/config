@@ -1,0 +1,153 @@
+[colors]
+color0 = ${xrdb:color0}
+color1 = ${xrdb:color1}
+color2 = ${xrdb:color2}
+color3 = ${xrdb:color3}
+color4 = ${xrdb:color4}
+color5 = ${xrdb:color5}
+color6 = ${xrdb:color6}
+color7 = ${xrdb:color7}
+color8 = ${xrdb:color8}
+color9 = ${xrdb:color9}
+color10 = ${xrdb:color10}
+color11 = ${xrdb:color11}
+color12 = ${xrdb:color12}
+color13 = ${xrdb:color13}
+color14 = ${xrdb:color14}
+color15 = ${xrdb:color15}
+
+background = #cc0c0d0e
+foreground = #b7b8b9
+black = ${colors.background}
+white = ${colors.foreground}
+transparent = #00ffffff
+focused_ws_bg  = ${colors.color2}
+focused_ws_fg  = ${colors.color0}
+active_ws_bg   = ${colors.color8}
+inactive_ws_bg = ${colors.color8}
+urgent_ws_bg   = ${colors.color8}
+
+
+[bar/master]
+width = 100%
+height = 20
+separator = " "
+background = ${colors.background}
+foreground = ${colors.foreground}
+underline-size = 2
+overline-size = 2
+tray-padding = 2
+font-0 = Terminus:pixelsize=12;2
+font-1 = FontAwesome:pixelsize=11;1
+font-2 = Terminus:pixelsize=12;3
+wm-restack = i3
+bottom = true
+modules-left = workspaces
+modules-center = title
+modules-right = up-speed down-speed cpu ram time
+
+[bar/right]
+inherit = bar/master
+monitor = DP-5
+tray-position = right
+
+[bar/left]
+inherit = bar/master
+monitor = DP-3
+
+[module/workspaces]
+type = internal/i3
+enable-click = true
+enable-scroll = false
+pin-workspaces = true
+
+label-active-font=3
+label-focused-padding-right = 1
+label-focused-overline = ${colors.background}
+label-focused-foreground = ${colors.focused_ws_fg}
+label-focused-background = ${colors.focused_ws_bg}
+
+label-unfocused-padding-right = 1
+label-unfocused-overline = ${colors.background}
+label-unfocused-background = ${colors.urgent_ws_bg}
+
+label-visible-padding-right = 1
+label-visible-overline = ${colors.focused_ws_bg}
+label-visible-background = ${colors.active_ws_bg}
+
+label-urgent-padding-right = 1
+label-urgent-overline = ${colors.background}
+label-urgent-background = ${colors.urgent_ws_bg}
+
+[module/title]
+type = internal/xwindow
+
+label = %title%
+label-active-font=3
+label-maxlen = 75
+
+[module/network]
+type = internal/network
+interface = wlo1
+ping-interval = 3
+
+format-connected-padding = 1
+label-connected-padding-left = 1
+
+accumulate-stats = true
+
+[module/up-speed]
+inherit = module/network
+
+interface = enp0s25
+format-connected-prefix = 
+format-connected-prefix-foreground = ${colors.color4}
+format-connected-underline = ${colors.color4}
+
+label-connected = %upspeed%
+
+[module/down-speed]
+inherit = module/network
+
+interface = enp0s25
+format-connected-prefix = 
+format-connected-prefix-foreground = ${colors.color9}
+format-connected-underline = ${colors.color9}
+
+label-connected = %downspeed%
+
+[module/cpu]
+type = internal/cpu
+interval = 0.5
+
+format-prefix = 
+format-prefix-foreground = ${colors.color11}
+format-underline = ${colors.color11}
+format-padding = 1
+
+label-padding-left = 1
+
+[module/ram]
+type = internal/memory
+interval = 3
+
+format-prefix = 
+format-prefix-foreground = ${colors.color13}
+format-underline = ${colors.color13}
+format-padding = 1
+
+label-padding-left = 1
+
+[module/time]
+type = internal/date
+interval = 60
+
+format-padding = 1
+format-prefix = 
+format-prefix-foreground = ${colors.color10}
+format-underline = ${colors.color10}
+
+date = "%I:%M %p %a, %d, %b"
+label-padding-left = 1
+
+
