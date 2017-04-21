@@ -5,8 +5,8 @@ tmpbg='/tmp/screen.png'
 
 (( $# )) && { icon=$1; }
 
-scrot "$tmpbg"
-convert "$tmpbg" -scale 10% -scale 1000% "$tmpbg"
+scrot -e"convert \$f -scale 10% -scale 1000% \$f" "$tmpbg"
+
 if [[ -f $icon ]]
 then
     # placement x/y

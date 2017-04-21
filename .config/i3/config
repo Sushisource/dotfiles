@@ -105,6 +105,8 @@ bindsym $mod+Return exec i3-sensible-terminal
 
 # kill focused window
 bindsym $mod+Shift+q kill
+# force kill using xkill
+bindsym --release $mod+Ctrl+Shift+q exec xkill
 
 # start dmenu (Only with programs shipping a .desktop file)
 bindsym $mod+d exec --no-startup-id rofi -show drun

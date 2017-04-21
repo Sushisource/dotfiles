@@ -1,1 +1,1 @@
-/home/sjudge/.local/share/omf/themes/cmorrell/fish_prompt.fish
+/home/sjudge/.local/share/omf/themes/sushi/fish_prompt.fish
