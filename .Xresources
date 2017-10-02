@@ -1,5 +1,5 @@
 ! Fonts
-#define FONT           xft:Consolas:pixelsize=14:antialias=true:autohinting=true,xft:DejaVu Sans Mono:pixelsize=14:antialias=true:autohinting=true
+#define FONT           xft:Consolas:pixelsize=14:antialias=true:autohinting=true,xft:DejaVu Sans Mono:pixelsize=14:antialias=true:autohinting=true,xft:Noto Emoji:pixelsize=18:antialias=true
 #define FONT_BOLD      xft:Consolas:bold:pixelsize=14:antialias=true:autohinting=true,xft:DejaVu Sans Mono:pixelsize=14:antialias=true:autohinting=true
 #define FONT_ITALIC    xft:Consolas:italic:pixelsize=14:antialias=true:autohinting=true,xft:DejaVu Sans Mono:pixelsize=14:antialias=true:autohinting=true
 #define FONT_UNDERLINE xft:Consolas:underline:pixelsize=14:antialias=true:autohinting=true,xft:DejaVu Sans Mono:pixelsize=14:antialias=true:autohinting=true
@@ -15,6 +15,11 @@ Xft.rgba:   rgb
 !color scheme:
 URxvt*depth: 32
 URxvt*background: [90]#2B2B2B
+! Set transparency for urxvt
+URxvt*.transparent: true
+!URxvt*.shading: 0 to 99 darkens, 101 to 200 lightens
+URxvt*.shading: 25
+URxvt*blurRadius: 15
 *foreground: #DEDEDE
 
 *colorUL: #86a2b0

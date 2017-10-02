@@ -37,10 +37,11 @@ foreground = ${colors.foreground}
 underline-size = 2
 overline-size = 2
 tray-padding = 2
-font-0 = Terminus:pixelsize=12;2
+; font-N = <fontconfig pattern>;<vertical offset>
+font-0 = xos4 Terminus:pixelsize=12:antialias=false;1
 font-1 = FontAwesome:pixelsize=11;1
-font-2 = Terminus:pixelsize=12;3
-font-3 = Consolas:size=11;3
+font-2 = Consolas:size=11;3
+font-3 = xos4 Terminus:pixelsize=12:antialias=false;3
 wm-restack = i3
 bottom = true
 modules-left = workspaces
@@ -62,34 +63,36 @@ enable-click = true
 enable-scroll = false
 pin-workspaces = true
 
-label-active-font=3
-
 label-focused-padding-right = 1
 label-focused-margin-right = 1
 label-focused-overline = ${colors.background}
 label-focused-foreground = ${colors.focused_ws_fg}
 label-focused-background = ${colors.focused_ws_bg}
+label-focused-font=4
 
 label-unfocused-padding-right = 1
 label-unfocused-margin-right = 1
 label-unfocused-overline = ${colors.background}
 label-unfocused-background = ${colors.urgent_ws_bg}
+label-unfocused-font=4
 
 label-visible-padding-right = 1
 label-visible-margin-right = 1
 label-visible-overline = ${colors.focused_ws_bg}
 label-visible-background = ${colors.active_ws_bg}
+label-visible-font=4
 
 label-urgent-padding-right = 1
 label-urgent-margin-right = 1
 label-urgent-overline = ${colors.background}
 label-urgent-background = ${colors.urgent_ws_bg}
+label-urgent-font=4
 
 [module/title]
 type = internal/xwindow
 
 label = %title%
-label-font=4
+label-font=3
 label-maxlen = 75
 
 [module/network]
