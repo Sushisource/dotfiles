@@ -6,10 +6,12 @@
 !.bashrc
 !.Xresources
 !.xinitrc
+!scripts/
 
 # This sillyness is to enable certain things in the config dir
 !.config/
 .config/*
+!.config/htop
 # i3
 !.config/i3/
 !.config/i3status/
@@ -30,3 +32,4 @@
 !.config/polybar
 # wal help
 !.config/rando_wall.sh
+
