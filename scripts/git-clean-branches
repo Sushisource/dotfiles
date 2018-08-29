@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+branch_flag="-d"
+if [ "$1" == "-D" ]; then
+    echo "HARD MODE"
+    branch_flag="-D"
+fi
+
+git branch -r | awk '{print $1}' | egrep -v -f /dev/fd/0 <(git branch -vv | grep origin) | awk '{print $1}' | xargs git branch $branch_flag
