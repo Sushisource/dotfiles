@@ -1,0 +1,7 @@
+[user]
+name = Spencer Judge
+email = spencer@temporal.io
+
+
+[commit]
+gpgsign = true

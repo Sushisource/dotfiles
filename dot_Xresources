@@ -1,0 +1,71 @@
+Xft.dpi: 144
+Xft.antialias: true
+Xft.hinting: true
+Xft.rgba: rgb
+Xft.autohint: false
+Xft.hintstyle: hintfull
+Xft.lcdfilter: lcddefault
+
+! Fonts
+#define FONT           xft:Consolas:Regular:pixelsize=14,xft:DejaVu Sans Mono:pixelsize=14,xft:Noto Color Emoji:pixelsize=18
+#define FONT_BOLD      xft:Consolas:Bold:pixelsize=14,xft:DejaVu Sans Mono:pixelsize=14
+#define FONT_ITALIC    xft:Consolas:Italic:pixelsize=14,xft:DejaVu Sans Mono:pixelsize=14
+#define FONT_UNDERLINE xft:Consolas:Underline:pixelsize=14,xft:DejaVu Sans Mono:pixelsize=14
+
+#include </home/sushi/.themes/xresources-themes/nord>
+! For using same names for nord
+#define bg   nord0
+#define fg   nord4
+#define blk  nord1
+#define bblk nord3
+#define red  nord11
+#define bred nord11
+#define grn  nord14
+#define bgrn nord14
+#define ylw  nord13
+#define bylw nord13
+#define blu  nord9
+#define bblu nord9
+#define mag  nord15
+#define bmag nord15
+#define cyn  nord8
+#define bcyn nord7
+! Colors (for themes/colors)
+/* *background:   bg */  
+/* *foreground:   fg */  
+/* *color0:      blk */  
+/* *color8:      bblk */  
+/* *color1:      red */  
+/* *color9:      bred */  
+/* *color2:      grn */  
+/* *color10:     bgrn */  
+/* *color3:      ylw */  
+/* *color11:     bylw */  
+/* *color4:      blu */  
+/* *color12:     bblu */  
+/* *color5:      mag */  
+/* *color13:     bmag */  
+/* *color6:      cyn */  
+/* *color14:     bcyn */  
+/* *color7:      wht */  
+/* *color15:     bwht */  
+
+! Rofi settings
+rofi.show-icons: true
+rofi.dpi: 144
+rofi.bw: 3
+rofi.opacity: 80
+rofi.color-enabled: true
+rofi.separator-style: solid
+!                 ´background´, ´border´
+rofi.color-window: bg, grn, grn
+! State:           ´bg´,     ´fg´,  ´bgalt´,  ´hlbg´,   ´hlfg´
+rofi.color-normal: bg, fg, bg, bgrn, blk
+rofi.color-active: bg, fg, bg, bylw, blk
+rofi.color-urgent: bg, fg, bg, bred, blk
+
+! Special window format that accounts for our dynamic workspace naming to
+! grab only the number part of the workspace name
+rofi.window-format: {w:1} {c} {t}
+
+rofi.modi: window,drun

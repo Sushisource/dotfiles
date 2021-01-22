@@ -1,0 +1,26 @@
+" Use relative numbers for all lines except current line
+set number relativenumber
+" Make forwardslash search case insensitive unless a cap letter is in search
+set hlsearch
+set incsearch
+set ignorecase smartcase
+" A bit of padding around the current line
+set scrolloff=5
+
+" Bindings ====================================================================
+" Leader as space. \<Space> doesn't work with ideavim
+let mapleader= " "
+" clear highlighting
+nmap <leader>h :noh<CR>
+" Find all usages of symbol
+nmap gr :action FindUsages<CR>
+
+" IdeaVIM specific ============================================================
+" Enable vim-surround emulation
+set surround
+" Enable vim-commentary emulation
+set commentary
+" Enable easymotion emulation
+set easymotion
+" Use intellij action to wrap text in visual mode
+vmap gq :action com.andrewbrookins.idea.wrap.WrapAction<CR>

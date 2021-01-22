@@ -1,0 +1,23 @@
+[character]
+success_symbol = "[λ](bold green) "
+error_symbol = "[λ](bold red) "
+
+[aws]
+disabled = true
+
+[gcloud]
+disabled = true
+
+[rust]
+format = "[$symbol$version]($style) "
+
+[package]
+format = "@ [$symbol$version]($style) "
+
+[git_branch]
+format = "[$symbol$branch]($style) "
+
+[git_status]
+untracked = "[?](bold yellow)"
+modified = "[Δ](bold red)"
+style = "bold yellow"
