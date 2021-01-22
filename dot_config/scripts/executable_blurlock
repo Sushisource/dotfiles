@@ -1,0 +1,18 @@
+#!/bin/bash
+
+# Just delegating to i3 fancy lock for now
+# take screenshot
+# import -window root /tmp/screenshot.jpg
+
+# # blur it
+# convert /tmp/screenshot.jpg -blur 0x5 /tmp/screenshotblur.jpg
+# rm /tmp/screenshot.jpg
+
+# # lock the screen
+# i3lock -i /tmp/screenshotblur.jpg &
+i3lock-fancy &
+
+# sleep 1 adds a small delay to prevent possible race conditions with suspend
+sleep 1
+
+exit 0
