@@ -1,0 +1,222 @@
+[colors]
+color0 = ${xrdb:color0}
+color1 = ${xrdb:color1}
+color2 = ${xrdb:color2}
+color3 = ${xrdb:color3}
+color4 = ${xrdb:color4}
+color5 = ${xrdb:color5}
+color6 = ${xrdb:color6}
+color7 = ${xrdb:color7}
+color8 = ${xrdb:color8}
+color9 = ${xrdb:color9}
+color10 = ${xrdb:color10}
+color11 = ${xrdb:color11}
+color12 = ${xrdb:color12}
+color13 = ${xrdb:color13}
+color14 = ${xrdb:color14}
+color15 = ${xrdb:color15}
+
+background = #cc0c0d0e
+foreground = #b7b8b9
+black = ${colors.background}
+white = ${colors.foreground}
+transparent = #00ffffff
+focused_ws_bg  = ${colors.color2}
+focused_ws_fg  = ${colors.color0}
+active_ws_bg   = ${colors.color8}
+inactive_ws_bg = ${colors.color8}
+urgent_ws_bg   = ${colors.color8}
+
+
+[bar/center]
+width = 100%
+height = 28
+separator = " "
+background = ${colors.background}
+foreground = ${colors.foreground}
+underline-size = 2
+overline-size = 2
+tray-padding = 2
+; font-N = <fontconfig pattern>;<vertical offset>
+font-0 = xos4 Terminus:pixelsize=18:antialias=false;1
+font-1 = FontAwesome5Free:style=Solid:pixelsize=14;3
+font-2 = Consolas:size=16;3
+font-3 = xos4 Terminus:pixelsize=18:antialias=false;3
+font-4 = FontAwesome5Free:style=Solid:pixelsize=14;1
+font-5 = FontAwesome5Brands:style=Solid:pixelsize=14;3
+wm-restack = i3
+bottom = true
+modules-left = workspaces
+modules-center = title
+modules-right = spotify up-speed down-speed cpu ram filesystem time
+
+monitor = DP-2
+tray-position = right
+
+[bar/right]
+width = 100%
+height = 20
+separator = " "
+background = ${colors.background}
+foreground = ${colors.foreground}
+underline-size = 2
+overline-size = 2
+tray-padding = 2
+; font-N = <fontconfig pattern>;<vertical offset>
+font-0 = xos4 Terminus:pixelsize=8:antialias=false;1
+font-1 = FontAwesome5Free:style=Solid:pixelsize=11;3
+font-2 = Consolas:size=14;3
+font-3 = xos4 Terminus:pixelsize=8:antialias=false;3
+font-4 = FontAwesome5Free:style=Solid:pixelsize=11;1
+font-5 = FontAwesome5Brands:style=Solid:pixelsize=11;3
+wm-restack = i3
+bottom = true
+modules-left = workspaces
+modules-center = title
+
+monitor = DP-4
+
+[bar/left]
+width = 100%
+height = 20
+separator = " "
+background = ${colors.background}
+foreground = ${colors.foreground}
+underline-size = 2
+overline-size = 2
+tray-padding = 2
+; font-N = <fontconfig pattern>;<vertical offset>
+font-0 = xos4 Terminus:pixelsize=8:antialias=false;1
+font-1 = FontAwesome5Free:style=Solid:pixelsize=11;3
+font-2 = Consolas:size=14;3
+font-3 = xos4 Terminus:pixelsize=8:antialias=false;3
+font-4 = FontAwesome5Free:style=Solid:pixelsize=11;1
+font-5 = FontAwesome5Brands:style=Solid:pixelsize=11;3
+wm-restack = i3
+bottom = true
+modules-left = workspaces
+modules-center = title
+
+monitor = DP-0
+
+[module/workspaces]
+type = internal/i3
+enable-click = true
+enable-scroll = false
+pin-workspaces = true
+
+label-focused-padding-right = 1
+label-focused-margin-right = 1
+label-focused-overline = ${colors.background}
+label-focused-foreground = ${colors.focused_ws_fg}
+label-focused-background = ${colors.focused_ws_bg}
+label-focused-font=4
+
+label-unfocused-padding-right = 1
+label-unfocused-margin-right = 1
+label-unfocused-overline = ${colors.background}
+label-unfocused-background = ${colors.urgent_ws_bg}
+label-unfocused-font=4
+
+label-visible-padding-right = 1
+label-visible-margin-right = 1
+label-visible-overline = ${colors.focused_ws_bg}
+label-visible-background = ${colors.active_ws_bg}
+label-visible-font=4
+
+label-urgent-padding-right = 1
+label-urgent-margin-right = 1
+label-urgent-overline = ${colors.background}
+label-urgent-background = ${colors.urgent_ws_bg}
+label-urgent-font=4
+
+[module/spotify]
+type = custom/script
+interval = 1
+format-prefix = "%{T5} " 
+format = <label>
+exec = python ~/.config/polybar/spotify_status.py
+format-underline = ${colors.color10}
+
+[module/title]
+type = internal/xwindow
+
+label = %title%
+label-font=3
+label-maxlen = 75
+
+[module/network]
+type = internal/network
+interface = wlo1
+ping-interval = 3
+
+format-connected-padding = 1
+label-connected-padding-left = 1
+
+accumulate-stats = true
+
+[module/up-speed]
+inherit = module/network
+
+interface = enp0s31f6
+format-connected-prefix = %{T5}
+format-connected-prefix-foreground = ${colors.color4}
+format-connected-underline = ${colors.color4}
+
+label-connected = %upspeed%
+
+[module/down-speed]
+inherit = module/network
+
+interface = enp0s31f6
+format-connected-prefix = %{T5}
+format-connected-prefix-foreground = ${colors.color9}
+format-connected-underline = ${colors.color9}
+
+label-connected = %downspeed%
+
+[module/cpu]
+type = internal/cpu
+interval = 0.5
+
+format-prefix = %{T5}
+format-prefix-foreground = ${colors.color11}
+format-underline = ${colors.color11}
+format-padding = 1
+
+label-padding-left = 1
+
+[module/ram]
+type = internal/memory
+interval = 3
+
+format-prefix = %{T5}
+format-prefix-foreground = ${colors.color13}
+format-underline = ${colors.color13}
+format-padding = 1
+
+label-padding-left = 1
+
+[module/time]
+type = internal/date
+interval = 60
+
+format-padding = 1
+format-prefix = %{T5}
+format-prefix-foreground = ${colors.color10}
+format-underline = ${colors.color10}
+
+date = "%I:%M %p %a, %d, %b"
+label-padding-left = 1
+
+[module/filesystem]
+type = internal/fs
+fixed-values = true
+
+mount-0 = /
+
+format-mounted-padding = 1
+label-mounted = %percentage_used%%
+format-mounted-prefix = %{T5} %{T5}
+format-mounted-prefix-foreground = ${colors.color14}
+format-mounted-underline = ${colors.color14}
